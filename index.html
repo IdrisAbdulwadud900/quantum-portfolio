@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quantum — 18-year-old web designer, crypto educator, memecoin trader and AI tools builder from Nigeria. Building the next big thing." />
+  <meta name="theme-color" content="#05060a" />
+  <title>Quantum · Web Designer · Crypto Educator · AI Builder</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Quantum — Web Designer · Crypto Educator · AI Builder" />
+  <meta property="og:description" content="18 y/o builder from Nigeria. UI/UX, crypto education, memecoin trading and AI tools. Building the next big thing." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@QuantUMYTE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- ░░  Animated quantum field background  ░░ -->
+  <canvas id="quantum-field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+  </div>
+
+  <!-- ░░  Custom cursor  ░░ -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
+
+  <!-- ░░  Page progress  ░░ -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ░░  Navigation  ░░ -->
+  <header class="nav">
+    <a href="#top" class="nav__brand" data-magnetic>
+      <span class="nav__brand-mark">◍</span>
+      <span class="nav__brand-text">QUANTUM<span>/</span>YTE</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#working">Now</a>
+      <a href="#passions">Passions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav__cta" data-magnetic>
+      <span>Let's build</span>
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </header>
+
+  <main id="top">
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  HERO  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="hero">
+      <div class="hero__meta">
+        <span class="dot"></span>
+        <span>Building the next big thing · Africa · 2026</span>
+      </div>
+
+      <h1 class="hero__title" data-split>
+        <span class="line"><span class="word">Engineering</span> <span class="word italic">the</span></span>
+        <span class="line"><span class="word gradient">improbable</span> <span class="word">into</span></span>
+        <span class="line"><span class="word">the</span> <span class="word italic">inevitable.</span></span>
+      </h1>
+
+      <p class="hero__sub">
+        I'm <strong data-fill="name">Quantum</strong> — an <strong data-fill="age">18</strong>-year-old
+        <strong data-fill="role">web designer, crypto educator & AI tools builder</strong> from
+        <strong data-fill="location">Nigeria</strong>. I design interfaces, trade memecoins, teach Web3, and ship platforms that move culture forward.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#working" class="btn btn--primary" data-magnetic>
+          <span>See what I'm building</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+        <a href="#about" class="btn btn--ghost" data-magnetic>
+          <span>About me</span>
+        </a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num" data-count="0" data-target-fill="age">—</span>
+          <span class="stat__label">Years on Earth</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="0" data-target-fill="years">—</span>
+          <span class="stat__label">Years building</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="0" data-target-fill="projects">—</span>
+          <span class="stat__label">Projects shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">∞</span>
+          <span class="stat__label">Curiosity</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ABOUT  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section id="about" class="section">
+      <div class="section__head">
+        <span class="eyebrow">01 · Identity</span>
+        <h2 class="section__title">A short story <em>about me.</em></h2>
+      </div>
+
+      <div class="about">
+        <div class="about__card glass" data-reveal>
+          <p class="about__lead">
+            I'm <strong data-fill="name">Quantum</strong>, an <strong data-fill="age">18</strong>-year-old builder out of
+            <strong data-fill="location">Nigeria</strong> living at the intersection of <em>design</em>, <em>crypto</em>, and <em>AI</em>.
+            I craft interfaces that feel inevitable, hunt asymmetric bets in the memecoin trenches, and teach the next wave of
+            African builders how to navigate Web3 without losing their soul.
+          </p>
+          <p class="about__lead">
+            When I'm not designing or building, I'm probably <span data-fill="hobby">deep in a memecoin chart</span>,
+            studying <span data-fill="learning">AI agents and market microstructure</span>, or shipping the next tool that didn't exist yesterday.
+          </p>
+        </div>
+
+        <aside class="about__side">
+          <div class="info glass" data-reveal>
+            <span class="info__key">Name</span>
+            <span class="info__val" data-fill="name">[Your Name]</span>
+          </div>
+          <div class="info glass" data-reveal>
+            <span class="info__key">Age</span>
+            <span class="info__val" data-fill="age">[Age]</span>
+          </div>
+          <div class="info glass" data-reveal>
+            <span class="info__key">Role</span>
+            <span class="info__val" data-fill="role">[Role]</span>
+          </div>
+          <div class="info glass" data-reveal>
+            <span class="info__key">Based in</span>
+            <span class="info__val" data-fill="location">[Location]</span>
+          </div>
+          <div class="info glass" data-reveal>
+            <span class="info__key">Status</span>
+            <span class="info__val"><span class="pulse"></span> Open to opportunities</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  SKILLS  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section id="skills" class="section">
+      <div class="section__head">
+        <span class="eyebrow">02 · Stack</span>
+        <h2 class="section__title">Tools that bend to <em>my will.</em></h2>
+      </div>
+
+      <div class="skills">
+        <article class="skill glass" data-reveal data-tilt>
+          <div class="skill__icon">◎</div>
+          <h3>UI / UX Design</h3>
+          <p>Web3 interfaces, dashboards, landing pages — typography-driven, motion-rich, conversion-focused.</p>
+          <div class="skill__bar"><span style="--p:96%"></span></div>
+        </article>
+
+        <article class="skill glass" data-reveal data-tilt>
+          <div class="skill__icon">◈</div>
+          <h3>Crypto Trading</h3>
+          <p>Memecoin sniping, on-chain analytics, risk management. Living in the trenches so others don't have to.</p>
+          <div class="skill__bar"><span style="--p:90%"></span></div>
+        </article>
+
+        <article class="skill glass" data-reveal data-tilt>
+          <div class="skill__icon">∞</div>
+          <h3>AI Tools Building</h3>
+          <p>LLM apps, prompt systems, AI agents, no-code → code workflows. Turning intelligence into product.</p>
+          <div class="skill__bar"><span style="--p:88%"></span></div>
+        </article>
+
+        <article class="skill glass" data-reveal data-tilt>
+          <div class="skill__icon">⌘</div>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript, React, Next.js — pixel-perfect frontends with motion that feels alive.</p>
+          <div class="skill__bar"><span style="--p:92%"></span></div>
+        </article>
+
+        <article class="skill glass" data-reveal data-tilt>
+          <div class="skill__icon">⟁</div>
+          <h3>Crypto Education</h3>
+          <p>Breaking down DeFi, memecoins, on-chain alpha and Web3 mechanics into language anyone can act on.</p>
+          <div class="skill__bar"><span style="--p:94%"></span></div>
+        </article>
+
+        <article class="skill glass" data-reveal data-tilt>
+          <div class="skill__icon">✺</div>
+          <h3>Platform Building</h3>
+          <p>Zero-to-one products: strategy, branding, design system, build, launch — the whole stack.</p>
+          <div class="skill__bar"><span style="--p:86%"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  CAPABILITIES  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section id="capabilities" class="section">
+      <div class="section__head">
+        <span class="eyebrow">03 · Capabilities</span>
+        <h2 class="section__title">What I can <em>do for you.</em></h2>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Web Design</span><span>·</span>
+          <span>Crypto Education</span><span>·</span>
+          <span>Memecoin Trading</span><span>·</span>
+          <span>AI Tools</span><span>·</span>
+          <span>UI / UX</span><span>·</span>
+          <span>Web3 Platforms</span><span>·</span>
+          <span>Brand Identity</span><span>·</span>
+          <span>Landing Pages</span><span>·</span>
+          <span>Web Design</span><span>·</span>
+          <span>Crypto Education</span><span>·</span>
+          <span>Memecoin Trading</span><span>·</span>
+          <span>AI Tools</span><span>·</span>
+          <span>UI / UX</span><span>·</span>
+          <span>Web3 Platforms</span><span>·</span>
+          <span>Brand Identity</span><span>·</span>
+          <span>Landing Pages</span><span>·</span>
+        </div>
+      </div>
+
+      <ul class="capabilities">
+        <li class="cap glass" data-reveal>
+          <span class="cap__num">01</span>
+          <h3>Web3 UI / UX Design</h3>
+          <p>Crypto-native interfaces — wallets, dashboards, launchpads — that users actually understand.</p>
+        </li>
+        <li class="cap glass" data-reveal>
+          <span class="cap__num">02</span>
+          <h3>AI Tool Development</h3>
+          <p>Custom LLM-powered tools, agents and creator-facing AI products from idea to live.</p>
+        </li>
+        <li class="cap glass" data-reveal>
+          <span class="cap__num">03</span>
+          <h3>Crypto Education</h3>
+          <p>Cohort programs, threads, and content that turn beginners into confident on-chain operators.</p>
+        </li>
+        <li class="cap glass" data-reveal>
+          <span class="cap__num">04</span>
+          <h3>Memecoin Strategy</h3>
+          <p>Trench-tested frameworks for entries, exits and risk in the most volatile market on Earth.</p>
+        </li>
+        <li class="cap glass" data-reveal>
+          <span class="cap__num">05</span>
+          <h3>Brand & Landing Pages</h3>
+          <p>Identity systems and high-converting launch pages for Web3 founders and AI startups.</p>
+        </li>
+        <li class="cap glass" data-reveal>
+          <span class="cap__num">06</span>
+          <h3>Platform Building</h3>
+          <p>Full-stack zero-to-one builds — strategy, design system, frontend, launch & growth.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  CURRENTLY WORKING ON  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section id="working" class="section">
+      <div class="section__head">
+        <span class="eyebrow">04 · Now</span>
+        <h2 class="section__title">Currently <em>under construction.</em></h2>
+      </div>
+
+      <div class="now">
+        <article class="now__card glass" data-reveal data-tilt>
+          <header>
+            <span class="tag">In Progress</span>
+            <span class="now__date" data-fill="project1-date">2026</span>
+          </header>
+          <h3 data-fill="project1-name">AI Tools Platform</h3>
+          <p data-fill="project1-desc">Building the next-gen platform for AI-powered tools — a creator-first hub where builders ship, share and monetize intelligence.</p>
+          <div class="chips">
+            <span>AI</span><span>Next.js</span><span>Platform</span>
+          </div>
+          <a href="https://x.com/QuantUMYTE" target="_blank" rel="noopener" class="link">Follow updates →</a>
+        </article>
+
+        <article class="now__card glass" data-reveal data-tilt>
+          <header>
+            <span class="tag tag--alt">Live</span>
+            <span class="now__date" data-fill="project2-date">2026</span>
+          </header>
+          <h3 data-fill="project2-name">Crypto Education Engine</h3>
+          <p data-fill="project2-desc">An on-chain learning experience teaching the next million Africans how to navigate Web3, memecoins and serious trading — without the noise.</p>
+          <div class="chips">
+            <span>Web3</span><span>Education</span><span>Africa</span>
+          </div>
+          <a href="https://x.com/QuantUMYTE" target="_blank" rel="noopener" class="link">Join the wave →</a>
+        </article>
+
+        <article class="now__card glass" data-reveal data-tilt>
+          <header>
+            <span class="tag tag--soon">Coming Soon</span>
+            <span class="now__date" data-fill="project3-date">Soon</span>
+          </header>
+          <h3 data-fill="project3-name">QuantumUI Studio</h3>
+          <p data-fill="project3-desc">A premium UI/UX system + design playground for Web3 founders who want interfaces that feel like the future.</p>
+          <div class="chips">
+            <span>Design System</span><span>Web3</span><span>UI Kit</span>
+          </div>
+          <a href="https://x.com/QuantUMYTE" target="_blank" rel="noopener" class="link">Notify me →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  PASSIONS  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section id="passions" class="section">
+      <div class="section__head">
+        <span class="eyebrow">05 · Passions</span>
+        <h2 class="section__title">What sets me <em>on fire.</em></h2>
+      </div>
+
+      <div class="passions">
+        <div class="passion glass" data-reveal>
+          <span class="passion__emoji">🪙</span>
+          <h3>Crypto & Memecoins</h3>
+          <p>The wildest free market on Earth. I trade it, teach it, and design tools to make it less hostile.</p>
+        </div>
+        <div class="passion glass" data-reveal>
+          <span class="passion__emoji">🎨</span>
+          <h3>Design as Power</h3>
+          <p>Great UI is leverage. I obsess over typography, motion and the invisible details that move users.</p>
+        </div>
+        <div class="passion glass" data-reveal>
+          <span class="passion__emoji">🤖</span>
+          <h3>AI as a Tool</h3>
+          <p>I build with AI, ship with AI, teach with AI. The next decade belongs to those who wield it well.</p>
+        </div>
+        <div class="passion glass" data-reveal>
+          <span class="passion__emoji">🌍</span>
+          <h3>Africa Rising</h3>
+          <p>Teaching, building and shipping for the next billion users coming online from my continent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  CONTACT  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section id="contact" class="section section--contact">
+      <div class="contact glass" data-reveal>
+        <span class="eyebrow">06 · Signal</span>
+        <h2 class="contact__title">Have an idea worth <em>making real?</em></h2>
+        <p class="contact__sub">I'm currently taking on a few selected projects. Send a signal and let's talk.</p>
+
+        <a href="mailto:normaleasy045@gmail.com" class="contact__mail" data-magnetic data-fill="email">
+          normaleasy045@gmail.com
+        </a>
+
+        <div class="contact__socials">
+          <a href="https://x.com/QuantUMYTE" target="_blank" rel="noopener" data-magnetic>Twitter / X ↗</a>
+          <a href="mailto:normaleasy045@gmail.com" data-magnetic>Email ↗</a>
+          <a href="https://x.com/QuantUMYTE" target="_blank" rel="noopener" data-magnetic>DMs Open ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░  Footer  ░░ -->
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year"></span> <span data-fill="name">[Your Name]</span> — All quanta reserved.</span>
+      <span class="footer__sig">crafted with obsession · v1.0</span>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
