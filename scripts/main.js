@@ -10,34 +10,34 @@
 const PROFILE = {
   name:      "Quantum",
   age:       "18",
-  role:      "Web Designer · Crypto Educator · AI Tools Builder",
-  location:  "Nigeria, Africa",
-  hobby:     "hunting memecoins and sketching interfaces at 3am",
-  learning:  "AI agents, market microstructure & on-chain design",
+  role:      "Web designer, crypto educator, trader, and AI tools builder",
+  location:  "Nigeria",
+  hobby:     "studying charts and redesigning interfaces",
+  learning:  "AI automation, product design, and trading systems",
 
   // hero counters (numeric)
   years:     "3",   // years building
-  projects:  "20",  // projects shipped
+  projects:  "12",  // projects shipped
 
   // current projects
   "project1-name": "AI Tools Platform",
-  "project1-desc": "Building the next-gen platform for AI-powered tools — a creator-first hub where builders ship, share and monetize intelligence.",
+  "project1-desc": "I'm building an AI tools platform that helps creators and small teams work faster and ship better.",
   "project1-date": "2026",
 
   "project2-name": "Crypto Education Engine",
-  "project2-desc": "An on-chain learning experience teaching the next million Africans how to navigate Web3, memecoins, and serious trading — without the noise.",
+  "project2-desc": "A crypto education product focused on clear lessons, practical risk management, and real on-chain examples.",
   "project2-date": "2026",
 
   "project3-name": "QuantumUI Studio",
-  "project3-desc": "A premium UI/UX system + design playground for Web3 founders who want interfaces that feel like the future.",
+  "project3-desc": "A UI/UX kit for Web3 founders who want clean interfaces without overcomplicated design systems.",
   "project3-date": "Soon",
 
   // contact
   email:     "normaleasy045@gmail.com",
-  github:    "https://github.com/QuantUMYTE",
+  github:    "",
   twitter:   "https://x.com/QuantUMYTE",
-  linkedin:  "https://x.com/QuantUMYTE",
-  dribbble:  "https://x.com/QuantUMYTE",
+  linkedin:  "",
+  dribbble:  "",
 };
 
 /* ---------------- 1. Populate placeholders ------------------- */
