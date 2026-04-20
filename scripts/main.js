@@ -261,3 +261,105 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     window.scrollTo({ top, behavior: "smooth" });
   });
 });
+
+/* ---------------- 9. Live crypto ticker (CoinGecko) ---------- */
+(() => {
+  const COINS = ["solana", "bitcoin", "ethereum"];
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${COINS.join(",")}&vs_currencies=usd&include_24hr_change=true`;
+
+  const fmt = (n) => {
+    if (n >= 1000) return "$" + n.toLocaleString("en-US", { maximumFractionDigits: 0 });
+    if (n >= 1)    return "$" + n.toFixed(2);
+    return "$" + n.toFixed(4);
+  };
+
+  const update = async () => {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error("rate limited");
+      const data = await res.json();
+      for (const id of COINS) {
+        const px = data[id]?.usd;
+        const ch = data[id]?.usd_24h_change;
+        if (px == null) continue;
+        document.querySelectorAll(`[data-coin="${id}"]`).forEach(el => el.textContent = fmt(px));
+        document.querySelectorAll(`[data-coin-chg="${id}"]`).forEach(el => {
+          const sign = ch >= 0 ? "+" : "";
+          el.textContent = `${sign}${ch.toFixed(2)}%`;
+          el.classList.toggle("up", ch >= 0);
+          el.classList.toggle("down", ch < 0);
+        });
+      }
+    } catch (_) {
+      // silent fail — leave em-dashes; retry on next tick
+    }
+  };
+
+  update();
+  setInterval(update, 60_000); // refresh every minute
+})();
+
+/* ---------------- 10. Signature year + small fills ---------- */
+(() => {
+  const sig = document.getElementById("sig-year");
+  if (sig) sig.textContent = new Date().getFullYear();
+})();
+
+/* ---------------- 11. Easter egg: type "gm" for terminal ---- */
+(() => {
+  let buf = "";
+  const terminal = document.createElement("div");
+  terminal.className = "terminal";
+  terminal.innerHTML = `
+    <div class="terminal__box" role="dialog" aria-label="Quantum terminal">
+      <div class="terminal__bar">
+        <span></span><span></span><span></span>
+        <small>quantum@trenches  ~  zsh</small>
+      </div>
+      <div class="terminal__body" id="termBody"></div>
+    </div>`;
+  document.body.appendChild(terminal);
+
+  const lines = [
+    { t: 200,  html: '<span class="prompt">quantum@trenches</span> <span class="out">~ %</span> whoami' },
+    { t: 600,  html: '<span class="out">Quantum · 18 · Nigeria</span>' },
+    { t: 900,  html: '<span class="out">designer | crypto educator | trader | AI tools builder</span>' },
+    { t: 1300, html: '<span class="prompt">quantum@trenches</span> <span class="out">~ %</span> cat ./mission.txt' },
+    { t: 1700, html: '<span class="key">→</span> <span class="out">build a billion-dollar project before the world catches up.</span>' },
+    { t: 2100, html: '<span class="prompt">quantum@trenches</span> <span class="out">~ %</span> ./status.sh' },
+    { t: 2500, html: '<span class="out">[ ok ] design ............. shipping</span>' },
+    { t: 2700, html: '<span class="out">[ ok ] solana trenches .... locked in</span>' },
+    { t: 2900, html: '<span class="out">[ ok ] rust journey ....... in progress</span>' },
+    { t: 3100, html: '<span class="out">[ ok ] ai tools platform .. building</span>' },
+    { t: 3400, html: '<span class="prompt">quantum@trenches</span> <span class="out">~ %</span> echo "gm to whoever is reading this 🌅"' },
+    { t: 3800, html: '<span class="out">gm to whoever is reading this 🌅</span>' },
+    { t: 4200, html: '<span class="prompt">quantum@trenches</span> <span class="out">~ %</span> <span class="terminal__cursor"></span>' },
+  ];
+
+  const open = () => {
+    const body = terminal.querySelector("#termBody");
+    body.innerHTML = "";
+    terminal.classList.add("is-open");
+    lines.forEach(l => setTimeout(() => {
+      const div = document.createElement("div");
+      div.innerHTML = l.html;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }, l.t));
+  };
+  const close = () => terminal.classList.remove("is-open");
+
+  terminal.addEventListener("click", (e) => { if (e.target === terminal) close(); });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") return close();
+    if (terminal.classList.contains("is-open")) return;
+    // ignore typing inside inputs (none, but safe)
+    if (/^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName || "")) return;
+    if (e.key.length === 1) {
+      buf = (buf + e.key.toLowerCase()).slice(-4);
+      if (buf.endsWith("gm")) open();
+    }
+  });
+})();
+
